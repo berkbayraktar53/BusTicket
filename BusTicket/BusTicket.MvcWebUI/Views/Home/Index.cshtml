@@ -1,0 +1,118 @@
+﻿@model BusTicket.MvcWebUI.Models.TicketViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="col-md-5 bann-info1">
+        <i class="fa fa-ticket"></i>
+        <h3>Bilet rezervasyonunda indirim fırsatı</h3>
+    </div>
+    <div class="col-md-7 bann-info">
+        <div class="ban-top">
+            <form action="#loc">
+                <div class="bnr-left">
+                    <label class="inputLabel">Lokasyon</label>
+                    @Html.DropDownListFor(m => m.Ticket.Location, (List<SelectListItem>)ViewBag.loc, new { @class = "form-control" })
+                </div>
+                <div class="bnr-left">
+                    <label class="inputLabel">Koltuk Numarası</label>
+                    @Html.DropDownListFor(m => m.Ticket.SeatNumber, (List<SelectListItem>)ViewBag.set, new { @class = "form-control" })
+                </div>
+                <div class="clearfix"></div>
+            </form>
+        </div>
+        <div class="ban-bottom">
+            <form>
+                <div class="bnr-right">
+                    <label class="inputLabel">Yolculuk Tarihi</label>
+                    <input class="date" id="date" type="text" value="dd-mm-yyyy" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}" required=>
+                </div>
+                <div class="clearfix"></div>
+                <link rel="stylesheet" href="~/Templates/Home/css/jquery-ui.css" />
+                <script src="~/Templates/Home/js/jquery-ui.js"></script>
+                <script>
+                    $(function () {
+                        $("#datepicker,#datepicker1").datepicker();
+                    });
+                </script>
+            </form>
+        </div>
+        <div class="sear">
+            <form action="#loc">
+                <button class="seabtn">Bilet Bul</button>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="bus-btm">
+    <div class="container" id="loc">
+        <ul>
+            <li class="trav"><a href="#">LOKASYON</a></li>
+            <li class="dept"><a href="#">KALKIŞ</a></li>
+            <li class="arriv"><a href="#">VARIŞ</a></li>
+            <li class="seat"><a href="#">TARİH</a></li>
+            <li class="fare"><a href="#">ÜCRET</a></li>
+            <div class="clearfix"></div>
+        </ul>
+    </div>
+</div>
+<div class="bus-midd wow zoomIn animated animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: zoomIn;">
+    <div class="container">
+        @foreach (var item in Model.Tickets)
+        {
+            <ul class="first">
+                <li class="trav">
+                    <div class="bus-ic">
+                        <img src="~/Templates/Home/images/bus.png" class="img-responsive" alt="">
+                    </div>
+                    <div class="bus-txt">
+                        <h4>@item.Location</h4>
+                        <p>WiFi - TV - Klima (1+1)</p>
+                    </div>
+                    <div class="clearfix"></div>
+                </li>
+                <li class="dept">
+                    <div class="bus-ic1">
+                        <i class="fa fa-clock-o"></i>
+                    </div>
+                    <div class="bus-txt1">
+                        <h4><a href="#">@item.DepartureTime</a></h4>
+                        <p>Saat</p>
+                    </div>
+                    <div class="clearfix"></div>
+                </li>
+                <li class="arriv">
+                    <div class="bus-ic1">
+                        <i class="fa fa-clock-o"></i>
+                    </div>
+                    <div class="bus-txt2">
+                        <h4><a href="#">@item.ArrivalTime</a></h4>
+                        <p>Saat</p>
+                    </div>
+                </li>
+                <li class="seat">
+                    <div class="bus-ic3">
+                        <img src="~/Templates/Home/images/date-icon.png" class="img-responsive" alt="">
+                    </div>
+                    <div class="bus-txt3">
+                        <h4>@item.Date.Day/@item.Date.Month/@item.Date.Year</h4>
+                        <p>Gün</p>
+                    </div>
+                    <div class="clearfix"></div>
+                </li>
+
+                <li class="fare">
+                    <div class="bus-txt4">
+                        <h5>
+                            @item.Price
+                        </h5>
+                        <a href="/Home/Bus" target="_blank" class="view"> Koltuk Seç</a>
+                    </div>
+                </li>
+                <div class="clearfix"></div>
+            </ul>
+        }
+    </div>
+</div>

@@ -1,0 +1,53 @@
+﻿@model BusTicket.Entities.Concrete.Ticket
+@{
+    ViewBag.Title = "GetTicket";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <h3>Müşteri Güncelle</h3>
+                <div class="card">
+                    @using (Html.BeginForm("UpdateTicket", "Admin", FormMethod.Post))
+                    {
+                        <br />
+                        <div class="col-md-12">
+                            @Html.LabelFor(x => x.Id)
+                            @Html.TextBoxFor(x => x.Id, new { @class = "form-control", @readonly = "readonly", @required = "required" })
+                        </div>
+                        <div class="col-md-12">
+                            <label>TARİH</label>
+                            @Html.TextBoxFor(x => x.Date, new { @class = "form-control", @required = "required" })
+                        </div>
+                        <div class="col-md-12">
+                            <label>KALKIŞ SAATİ</label>
+                            @Html.TextBoxFor(x => x.DepartureTime, new { @class = "form-control", @required = "required" })
+                        </div>
+                        <div class="col-md-12">
+                            <label>VARIŞ SAATİ</label>
+                            @Html.TextBoxFor(x => x.ArrivalTime, new { @class = "form-control", @required = "required" })
+                        </div>
+                        <div class="col-md-12">
+                            <label>LOKASYON</label>
+                            @Html.TextBoxFor(x => x.Location, new { @class = "form-control", @required = "required" })
+                        </div>
+                        <div class="col-md-12">
+                            <label>KOLTUK NUMARASI</label>
+                            @Html.TextBoxFor(x => x.SeatNumber, new { @class = "form-control", @required = "required" })
+                        </div>
+                        <div class="col-md-12">
+                            <label>ÜCRET</label>
+                            @Html.TextBoxFor(x => x.Price, new { @class = "form-control", @required = "required" })
+                        </div>
+                        <br />
+                        <div style="text-align:center">
+                            <button class="btn btn-success">Güncelle</button>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

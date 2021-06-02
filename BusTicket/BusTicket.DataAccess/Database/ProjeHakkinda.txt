@@ -1,0 +1,11 @@
+﻿Proje Hakkında;
+
+ - Visual Studioyu çalıştırdığınız zaman ilk olarak login ekranı gelmektedir. 
+   İsterseniz kayıt olarak giriş yapabilirsiniz.
+   Veya şu bilgileri girerek admin ekranına ulaşabilirsiniz.
+		Kullanıcı Adı: admin@gmail.com
+		Şifre: 123
+
+  - Veritabanının yedeği --> "BusTicket.DataAccess/Database/BusTicketDB.bak
+
+  - "keremberk53@hotmail.com" mail adresinden bana ulaşabilirsiniz.

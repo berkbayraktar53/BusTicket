@@ -1,0 +1,41 @@
+﻿@model BusTicket.Entities.Concrete.Manager
+@{
+    ViewBag.Title = "GetManager";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <h3>Admin Güncelle</h3>
+                <div class="card">
+                    @using (Html.BeginForm("UpdateManager", "Admin", FormMethod.Post))
+                    {
+                        <br />
+                        <div class="col-md-12">
+                            @Html.LabelFor(x => x.Id)
+                            @Html.TextBoxFor(x => x.Id, new { @class = "form-control", @readonly = "readonly", @required = "required" })
+                        </div>
+                        <div class="col-md-12">
+                            @Html.LabelFor(x => x.Name)
+                            @Html.TextBoxFor(x => x.Name, new { @class = "form-control", @required = "required" })
+                        </div>
+                        <div class="col-md-12">
+                            @Html.LabelFor(x => x.Email)
+                            @Html.TextBoxFor(x => x.Email, new { @class = "form-control", @required = "required" })
+                        </div>
+                        <div class="col-md-12">
+                            @Html.LabelFor(x => x.Password)
+                            @Html.TextBoxFor(x => x.Password, new { @class = "form-control", @required = "required" })
+                        </div>
+                        <br />
+                        <div style="text-align:center">
+                            <button class="btn btn-success">Güncelle</button>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

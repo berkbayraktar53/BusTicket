@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_LayoutAccount.cshtml";
+}
+
+<div class="padding-all">
+    <div class="header">
+        <h1>Giriş Paneli</h1>
+    </div>
+    <div class="design-w3l">
+        <div class="mail-form-agile">
+            @using (Html.BeginForm("Login", "Account", FormMethod.Post))
+            {
+                <form action="#" method="post">
+                    <input type="text" name="email" placeholder="Email" required="" />
+                    <input type="password" name="password" class="padding" placeholder="Şifre" required="" />
+                    <input type="submit" value="Giriş Yap">
+                </form>
+            }
+        </div>
+        <div class="clear"> </div>
+    </div>
+    <div class="footer">
+        <p>Üye değil misiniz? Şimdi <a href="/Account/Signup">Üye Ol</a></p>
+    </div>
+</div>

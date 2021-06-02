@@ -1,0 +1,30 @@
+﻿@model BusTicket.Entities.Concrete.Manager
+@{
+    ViewBag.Title = "AddManager";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <h3>Admin Ekle</h3>
+                <br />
+                <div class="card">
+                    <form class="form-group" method="post">
+                        <label>AD SOYAD</label>
+                        @Html.TextBoxFor(x => x.Name, new { @class = "form-control", @required = "required" })
+                        <br />
+                        <label>EMAİL</label>
+                        @Html.TextBoxFor(x => x.Email, new { @class = "form-control", @required = "required" })
+                        <br />
+                        <label>ŞİFRE</label>
+                        @Html.TextBoxFor(x => x.Password, new { @class = "form-control", @required = "required" })
+                        <br />
+                        <button class="btn btn-success">Ekle</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

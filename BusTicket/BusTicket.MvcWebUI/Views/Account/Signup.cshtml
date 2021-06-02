@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewBag.Title = "Signup";
+    Layout = "~/Views/Shared/_LayoutAccount.cshtml";
+}
+
+<div class="padding-all">
+    <div class="header">
+        <h1>Üyelik Formu</h1>
+    </div>
+    <div class="design-w3l">
+        <div class="mail-form-agile">
+            @using (Html.BeginForm("Signup", "Account", FormMethod.Post))
+            {
+                <form action="#" method="post">
+                    <input type="text" name="name" placeholder="Ad" required="" />
+                    <input type="text" name="surname" placeholder="Soyad" required="" />
+                    <input type="text" name="phone" placeholder="Telefon" required="" />
+                    <input type="text" name="email" placeholder="Email" required="" />
+                    <input type="password" name="password" class="padding" placeholder="Şifre" required="" />
+                    <input type="submit" id="signup" value="Kayıt Ol">
+                </form>
+
+            }
+            <script>
+                $("#signup").click(function () {
+                    alert("Kayıt işlemi başarılı.");
+                });
+            </script>
+        </div>
+        <div class="clear"> </div>
+    </div>
+    <div class="footer">
+        <p>Önceki sayfaya dönmek için <a href="/Account/Login">tıklayınız</a></p>
+    </div>
+</div>
