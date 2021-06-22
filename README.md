@@ -6,4 +6,3 @@
  - Admin panelinde tüm bilet işlemleri yer almaktadır.
 ![homebus](https://user-images.githubusercontent.com/73104871/122884476-e0f11700-d346-11eb-974a-c88ca541b2bb.png)
 ![busticket](https://user-images.githubusercontent.com/73104871/122884556-f23a2380-d346-11eb-84a6-bfe33b93b704.png)
-![adminbus](https://user-images.githubusercontent.com/73104871/122884582-f9f9c800-d346-11eb-985f-89eea1517e5e.png)
